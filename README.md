@@ -1,17 +1,34 @@
-<<<<<<< HEAD
-# portfolio-website
-My Personal Portfolio Website
-=======
-# React + Vite
+# Kaustuv Duwadi - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+![Portfolio Preview](public/images/portfolio-preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **Modern UI/UX**: Clean, professional design with glassmorphism effects
+- **Responsive**: Fully responsive design that works on all devices
+- **Dark/Light Mode**: Toggle between dark and light themes
+- **Interactive Elements**: Smooth animations and transitions using Framer Motion
+- **Contact Form**: Functional contact form with EmailJS integration
+- **Live Chat**: Interactive chat feature for quick communication
+- **Project Showcase**: Detailed project pages with galleries and descriptions
+- **SEO Optimized**: Meta tags and structured data for better search engine visibility
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
->>>>>>> 89d0058 (Initial commit: Portfolio website)
+## 🛠️ Technologies Used
+
+- **React**: Frontend library for building user interfaces
+- **Vite**: Next-generation frontend tooling
+- **Tailwind CSS**: Utility-first CSS framework
+- **Framer Motion**: Animation library for React
+- **React Router**: For navigation and routing
+- **EmailJS**: For contact form functionality
+- **React Hook Form**: For form validation
+- **React Icons**: For beautiful, consistent icons
+
+## 🔧 Setup & Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/portfolio-website.git
+```
