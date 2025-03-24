@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@layer components {
+  .section-title {
+    @apply text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-12;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #3b82f6, #1e3a8a);
+    border-radius: 3px;
+  }
+
+  .dark .section-title::after {
+    background: linear-gradient(to right, #60a5fa, #93c5fd);
+  }
+
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+      0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  .dark .card-hover:hover {
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-light-blue to-deep-blue bg-clip-text text-transparent;
+  }
+
+  .dark .gradient-text {
+    @apply bg-gradient-to-r from-blue-300 to-light-blue;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-8 py-3 rounded-lg text-white bg-light-blue hover:bg-blue-600 transition-all;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 rounded-lg text-light-blue dark:text-white bg-white/10 backdrop-blur-lg border border-white/10 shadow-lg hover:bg-light-blue/10 transition-all;
+  }
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 768px) {
+  .section-container {
+    padding: 1.5rem;
+  }
+}
