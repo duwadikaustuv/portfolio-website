@@ -1,3 +1,4 @@
+import React from "react";
 import { Component } from "react";
 import GlassCard from "./GlassCard";
 import { FiAlertTriangle, FiRefreshCw } from "react-icons/fi";

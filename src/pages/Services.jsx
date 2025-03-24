@@ -1,3 +1,4 @@
+import React from "react";
 import { motion } from "framer-motion";
 import { FiCheck, FiClock, FiDollarSign, FiSettings } from "react-icons/fi";
 import GlassCard from "../components/GlassCard";

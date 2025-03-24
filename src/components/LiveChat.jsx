@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiMessageSquare, FiX, FiSend, FiUser, FiClock } from 'react-icons/fi';

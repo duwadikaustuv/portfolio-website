@@ -1,6 +1,7 @@
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { useEffect } from "react"; // Add this import
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
