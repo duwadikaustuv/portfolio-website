@@ -11,14 +11,12 @@ import Services from "./pages/Services";
 import LiveChat from "./components/LiveChat";
 import ProjectDetail from "./pages/ProjectDetail";
 import NotFound from "./pages/NotFound";
+import SwirlCursor from "./components/SwirlCursor";
 
 function App() {
-  // Initialize theme from localStorage on app load
   useEffect(() => {
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem("theme");
 
-    // Apply dark mode if saved or if user prefers dark color scheme
     if (
       savedTheme === "dark" ||
       (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)
@@ -66,6 +64,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
         <LiveChat />
+        <SwirlCursor />
       </div>
     </Router>
   );

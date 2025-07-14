@@ -4,33 +4,42 @@ import {
   FiCode,
   FiDatabase,
   FiLayout,
-  FiCloud,
   FiCalendar,
   FiAward,
+  FiServer,
+  FiGitBranch,
+  FiTerminal,
 } from "react-icons/fi";
 import GlassCard from "../components/GlassCard";
 import ThemeToggle from "../components/ThemeToggle";
 
 const About = () => {
   const skills = [
-    { name: "React", icon: <FiCode /> },
-    { name: "Tailwind", icon: <FiLayout /> },
-    { name: "Redux", icon: <FiDatabase /> },
-    { name: "APIs", icon: <FiCloud /> },
-    { name: "Testing", icon: <FiCode /> },
+    { name: "React.js", icon: <FiCode /> },
+    { name: "Tailwind CSS", icon: <FiLayout /> },
+    { name: "PostgreSQL", icon: <FiDatabase /> },
+    { name: "ASP.NET Core", icon: <FiServer /> },
+    { name: "Git & GitHub", icon: <FiGitBranch /> },
   ];
 
   const timeline = [
     {
       year: "2025",
-      title: "Frontend Developer",
+      title: "Full-Stack Developer (In Progress)",
       description:
-        "Collaborated with backend team and worked as a frontend developer",
+        "Building full-stack projects using ASP.NET Core, C#, and SQL Server. Practicing backend development, API integration, and MVC architecture.",
     },
     {
       year: "2024",
-      title: "Newbie React Developer",
-      description: "Learnt React and built small projects",
+      title: "Frontend Developer (Internship)",
+      description:
+        "Worked with a team at SMaRC to build and maintain React apps. Integrated APIs, participated in code reviews, and contributed to production-ready features.",
+    },
+    {
+      year: "2024",
+      title: "Web Dev Beginner",
+      description:
+        "Started learning HTML, CSS, JavaScript, and React. Built small UI projects and began exploring Tailwind CSS.",
     },
   ];
 
@@ -74,9 +83,10 @@ const About = () => {
               About Me
             </h2>
             <p className="text-lg text-dark-gray dark:text-gray-300 mb-6 leading-relaxed">
-              Frontend developer specializing in modern web technologies. I
-              combine technical expertise with user-centered design to create
-              digital solutions that drive business growth.
+              I’m Kaustuv Duwadi, a Computing student focused on full-stack
+              development. I build responsive UIs with React and Tailwind, and
+              I’m learning backend development with C# and ASP.NET Core to
+              create clean, functional systems end to end.
             </p>
           </div>
         </motion.div>
@@ -90,7 +100,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             className="text-3xl font-heading font-bold text-center mb-12 text-deep-blue dark:text-light-blue"
           >
-            Technical Expertise
+            Tech Stack & Tools I Use
           </motion.h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {skills.map((skill, index) => (
@@ -125,7 +135,7 @@ const About = () => {
             whileInView={{ opacity: 1 }}
             className="text-3xl font-heading font-bold text-center mb-12 text-deep-blue dark:text-light-blue"
           >
-            Professional Journey
+            Learning Timeline
           </motion.h2>
           <div className="relative max-w-3xl mx-auto">
             <div className="absolute left-1/2 w-1 bg-gray-200 dark:bg-gray-700 h-full"></div>

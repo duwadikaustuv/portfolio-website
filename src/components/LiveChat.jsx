@@ -1,19 +1,23 @@
 import React from "react";
-import { useState, useRef, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiMessageSquare, FiX, FiSend, FiUser, FiClock } from 'react-icons/fi';
-import emailjs from '@emailjs/browser'; // Import EmailJS
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FiMessageSquare, FiX, FiSend, FiUser, FiClock } from "react-icons/fi";
+import emailjs from "@emailjs/browser";
 
 const LiveChat = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { id: 1, text: "Hi there! 👋 How can I help you today?", isUser: false, timestamp: new Date() }
+    {
+      id: 1,
+      text: "Hi there! 👋 Glad to meet you!",
+      isUser: false,
+      timestamp: new Date(),
+    },
   ]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
-  // Auto-scroll to bottom when new messages arrive
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -25,24 +29,22 @@ const LiveChat = () => {
   }, [messages, isOpen]);
 
   const formatTime = (date) => {
-    return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
-  // Function to send chat messages to your email
   const sendChatToEmail = async (message) => {
     try {
-      // Get EmailJS credentials from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-      
-      // Check if we have valid credentials
+
       if (!serviceId || !templateId || !publicKey) {
-        console.warn("EmailJS credentials not properly configured for LiveChat");
+        console.warn(
+          "EmailJS credentials not properly configured for LiveChat"
+        );
         return;
       }
-      
-      // Send the message to your email
+
       await emailjs.send(
         serviceId,
         templateId,
@@ -54,7 +56,7 @@ const LiveChat = () => {
         },
         publicKey
       );
-      
+
       console.log("Live chat message sent to email");
     } catch (error) {
       console.error("Error sending live chat to email:", error);
@@ -65,37 +67,38 @@ const LiveChat = () => {
     e.preventDefault();
     if (!newMessage.trim()) return;
 
-    // Add user message
-    const userMessage = { 
-      id: Date.now(), 
-      text: newMessage, 
+    const userMessage = {
+      id: Date.now(),
+      text: newMessage,
       isUser: true,
-      timestamp: new Date()
+      timestamp: new Date(),
     };
     setMessages([...messages, userMessage]);
-    setNewMessage('');
-    
-    // Send the message to your email
+    setNewMessage("");
+
     sendChatToEmail(newMessage);
-    
+
     setIsTyping(true);
 
-    // Simulate automated response after 1-2 seconds
     const responseTime = Math.floor(Math.random() * 1000) + 1000;
     setTimeout(() => {
       const botResponses = [
         "Thanks for your message! I'll get back to you soon.",
         "I appreciate your interest! I'll review this and respond shortly.",
         "Got it! I'll check this out and follow up with you.",
-        "Thanks for reaching out! I'll respond to your inquiry soon."
+        "Thanks for reaching out! I'll respond to your inquiry soon.",
       ];
-      const randomResponse = botResponses[Math.floor(Math.random() * botResponses.length)];
-      setMessages(prev => [...prev, { 
-        id: Date.now(), 
-        text: randomResponse, 
-        isUser: false,
-        timestamp: new Date()
-      }]);
+      const randomResponse =
+        botResponses[Math.floor(Math.random() * botResponses.length)];
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: Date.now(),
+          text: randomResponse,
+          isUser: false,
+          timestamp: new Date(),
+        },
+      ]);
       setIsTyping(false);
     }, responseTime);
   };
@@ -110,7 +113,11 @@ const LiveChat = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close chat" : "Open chat"}
       >
-        {isOpen ? <FiX size={24} aria-hidden="true" /> : <FiMessageSquare size={24} aria-hidden="true" />}
+        {isOpen ? (
+          <FiX size={24} aria-hidden="true" />
+        ) : (
+          <FiMessageSquare size={24} aria-hidden="true" />
+        )}
       </motion.button>
 
       {/* Chat Window */}
@@ -155,7 +162,9 @@ const LiveChat = () => {
                         <span>Kaustuv</span>
                       </>
                     )}
-                    <span className="ml-auto">{formatTime(message.timestamp)}</span>
+                    <span className="ml-auto">
+                      {formatTime(message.timestamp)}
+                    </span>
                   </div>
                   {message.text}
                 </div>
@@ -164,8 +173,18 @@ const LiveChat = () => {
                 <div className="max-w-[80%] p-3 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 self-start rounded-bl-none">
                   <div className="flex gap-1">
                     <span className="animate-bounce">.</span>
-                    <span className="animate-bounce" style={{ animationDelay: "0.2s" }}>.</span>
-                    <span className="animate-bounce" style={{ animationDelay: "0.4s" }}>.</span>
+                    <span
+                      className="animate-bounce"
+                      style={{ animationDelay: "0.2s" }}
+                    >
+                      .
+                    </span>
+                    <span
+                      className="animate-bounce"
+                      style={{ animationDelay: "0.4s" }}
+                    >
+                      .
+                    </span>
                   </div>
                 </div>
               )}
@@ -173,7 +192,10 @@ const LiveChat = () => {
             </div>
 
             {/* Message Input */}
-            <form onSubmit={handleSendMessage} className="border-t border-gray-200 dark:border-gray-700 p-3 flex gap-2">
+            <form
+              onSubmit={handleSendMessage}
+              className="border-t border-gray-200 dark:border-gray-700 p-3 flex gap-2"
+            >
               <input
                 type="text"
                 value={newMessage}

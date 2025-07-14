@@ -84,16 +84,13 @@ const Projects = () => {
     "Mobile",
   ];
 
-  // Filter and sort projects
   useEffect(() => {
     let result = [...projects];
 
-    // Filter by tech
     if (selectedTech !== "all") {
       result = result.filter((project) => project.tech.includes(selectedTech));
     }
 
-    // Filter by search query
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter(
@@ -105,7 +102,6 @@ const Projects = () => {
       );
     }
 
-    // Sort projects
     switch (sortBy) {
       case "newest":
         result.sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -124,10 +120,9 @@ const Projects = () => {
     }
 
     setFilteredProjects(result);
-    setCurrentPage(1); // Reset to first page when filters change
+    setCurrentPage(1);
   }, [selectedTech, searchQuery, sortBy]);
 
-  // Get current projects for pagination
   const indexOfLastProject = currentPage * projectsPerPage;
   const indexOfFirstProject = indexOfLastProject - projectsPerPage;
   const currentProjects = filteredProjects.slice(
@@ -136,10 +131,8 @@ const Projects = () => {
   );
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
 
-  // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  // Update project card to include a View Details link
   return (
     <div className="min-h-screen bg-soft-white dark:bg-gray-900">
       <nav className="fixed w-full glassmorphism py-4 z-50 backdrop-blur-lg">

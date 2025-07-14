@@ -10,28 +10,24 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Map section IDs to navbar section IDs
   const sectionMapping = {
-    "home": "home",
-    "about": "about",
-    "development-services": "services", // Map Development Services section to services nav item
-    "recent-projects": "projects",      // Map Recent Projects section to projects nav item
-    "contact-section": "contact"        // Map Contact section to contact nav item
+    home: "home",
+    about: "about",
+    "development-services": "services",
+    "recent-projects": "projects",
+    "contact-section": "contact",
   };
 
-  // Reordered sections to match the order on the homepage
   const sections = [
     { id: "home", label: "Home", path: "/" },
     { id: "about", label: "About", path: "/about" },
-    { id: "services", label: "Services", path: "/services" },
+    { id: "services", label: "Stack", path: "/services" },
     { id: "projects", label: "Projects", path: "/projects" },
     { id: "contact", label: "Contact", path: "/contact" },
   ];
 
   useEffect(() => {
-    // Set active section based on current path
     if (location.pathname === "/") {
-      // On homepage, determine active section based on scroll
       const handleScroll = () => {
         if (window.scrollY > 20) {
           setScrolled(true);
@@ -42,30 +38,29 @@ const Navbar = () => {
         const pageYOffset = window.pageYOffset;
         let newActiveSection = "home";
 
-        // Get all section elements on the page
         const sectionElements = [];
-        Object.keys(sectionMapping).forEach(sectionId => {
+        Object.keys(sectionMapping).forEach((sectionId) => {
           const element = document.getElementById(sectionId);
           if (element) {
             sectionElements.push({
               id: sectionId,
               element: element,
-              navId: sectionMapping[sectionId]
+              navId: sectionMapping[sectionId],
             });
           }
         });
 
-        // Sort sections by their position on the page
-        sectionElements.sort((a, b) => a.element.offsetTop - b.element.offsetTop);
+        sectionElements.sort(
+          (a, b) => a.element.offsetTop - b.element.offsetTop
+        );
 
-        // Find the current active section
         const viewportHeight = window.innerHeight;
         const threshold = viewportHeight * 0.3;
 
         for (let i = sectionElements.length - 1; i >= 0; i--) {
           const { element, navId } = sectionElements[i];
           const offsetTop = element.offsetTop;
-          
+
           if (pageYOffset >= offsetTop - threshold) {
             newActiveSection = navId;
             break;
@@ -75,30 +70,28 @@ const Navbar = () => {
         setActiveSection(newActiveSection);
       };
 
-      // Initial call to set correct section on page load
       setTimeout(handleScroll, 100);
-      
+
       window.addEventListener("scroll", handleScroll);
       return () => window.removeEventListener("scroll", handleScroll);
     } else {
-      // On other pages, set active section based on path
       const currentPath = location.pathname;
-      const currentSection = sections.find(section => 
-        currentPath === section.path || currentPath.startsWith(section.path + "/")
+      const currentSection = sections.find(
+        (section) =>
+          currentPath === section.path ||
+          currentPath.startsWith(section.path + "/")
       );
-      
+
       if (currentSection) {
         setActiveSection(currentSection.id);
       }
-      
-      // Always set scrolled to true on non-homepage routes
+
       setScrolled(true);
     }
   }, [location.pathname, sections, sectionMapping]);
 
   const navigateToSection = (sectionId, path) => {
     if (location.pathname === "/" && sectionId !== "home") {
-      // On homepage, scroll to section
       const section = document.getElementById(sectionId);
       if (section) {
         window.scrollTo({
@@ -107,7 +100,7 @@ const Navbar = () => {
         });
       }
     }
-    
+
     setActiveSection(sectionId);
     if (mobileMenuOpen) setMobileMenuOpen(false);
   };
@@ -124,8 +117,8 @@ const Navbar = () => {
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center">
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="text-xl font-heading font-bold text-deep-blue dark:text-light-blue"
               aria-label="Home"
             >
@@ -163,24 +156,43 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <ThemeToggle />
             <button
-              onClick={() => setMobileMenuOpen(true)}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="ml-4 p-2 text-dark-gray dark:text-gray-300"
-              aria-label="Open mobile menu"
+              aria-label={
+                mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"
+              }
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+              {mobileMenuOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
             </button>
           </div>
         </div>
@@ -194,28 +206,6 @@ const Navbar = () => {
           exit={{ opacity: 0 }}
           className="fixed inset-0 z-50 bg-white/90 dark:bg-gray-900/90 backdrop-blur-lg md:hidden"
         >
-          <div className="flex justify-end p-4">
-            <button
-              onClick={() => setMobileMenuOpen(false)}
-              className="p-2 text-dark-gray dark:text-gray-300"
-              aria-label="Close mobile menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
           <div className="flex flex-col items-center justify-center h-full space-y-8">
             {sections.map((section) => (
               <Link

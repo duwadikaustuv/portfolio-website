@@ -4,20 +4,17 @@ import { useEffect, useState } from "react";
 import {
   FiGithub,
   FiExternalLink,
-  FiCheckCircle,
+  FiTool,
   FiCode,
   FiDatabase,
-  FiLayout,
-  FiCloud,
+  FiRepeat,
 } from "react-icons/fi";
 import GlassCard from "../components/GlassCard";
 import ThemeToggle from "../components/ThemeToggle";
 
 const Home = () => {
-  // Add the missing typedText state
   const [typedText, setTypedText] = useState("");
 
-  // Add the typing effect
   useEffect(() => {
     const phrases = [
       "Frontend developer specializing in React",
@@ -34,27 +31,22 @@ const Home = () => {
       const currentPhrase = phrases[currentPhraseIndex];
 
       if (isDeleting) {
-        // Deleting text
         setTypedText(currentPhrase.substring(0, currentCharIndex - 1));
         currentCharIndex--;
-        typingSpeed = 50; // Faster when deleting
+        typingSpeed = 50;
       } else {
-        // Typing text
         setTypedText(currentPhrase.substring(0, currentCharIndex + 1));
         currentCharIndex++;
-        typingSpeed = 100; // Normal typing speed
+        typingSpeed = 100;
       }
 
-      // Check if completed typing the phrase
       if (!isDeleting && currentCharIndex === currentPhrase.length) {
         isDeleting = true;
-        typingSpeed = 1000; // Pause at the end
-      }
-      // Check if completed deleting
-      else if (isDeleting && currentCharIndex === 0) {
+        typingSpeed = 1000;
+      } else if (isDeleting && currentCharIndex === 0) {
         isDeleting = false;
         currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-        typingSpeed = 500; // Pause before typing next phrase
+        typingSpeed = 500;
       }
 
       setTimeout(typeText, typingSpeed);
@@ -66,29 +58,46 @@ const Home = () => {
   }, []);
 
   const services = [
-    { title: "React.js & Tailwind SPAs", icon: <FiCode /> },
-    { title: "API & Redux Integrations", icon: <FiDatabase /> },
-    { title: "Custom UI/UX Design", icon: <FiLayout /> },
-    { title: "Third-Party API Setup", icon: <FiCloud /> },
+    {
+      title: "Frontend",
+      icon: <FiCode />,
+      content: "React.js, Tailwind CSS, Vite, JavaScript (ES6+)",
+    },
+    {
+      title: "Backend (Learning)",
+      icon: <FiDatabase />,
+      content: "C#, ASP.NET Core MVC, Entity Framework, PostgreSQL",
+    },
+    {
+      title: "Tools",
+      icon: <FiTool />,
+      content: "Git & Github, Visual Studio, Rider & VS Code, Postman",
+    },
+    {
+      title: "Workflows",
+      icon: <FiRepeat />,
+      content: "Agile (Scrum-style teamwork), Kanban, Prototype, XP",
+    },
   ];
 
-  // Updated projects array with real data from your Projects page
   const projects = [
-    { 
+    {
       id: 1,
-      title: "MarketAgents Landing Page", 
-      description: "AI-powered market simulation platform featuring multi-agent systems and real-time analytics.",
+      title: "MarketAgents Landing Page",
+      description:
+        "AI-powered market simulation platform featuring multi-agent systems and real-time analytics.",
       tech: ["React", "Tailwind"],
       github: "https://github.com/duwadikaustuv/market-agents",
-      live: "https://www.marketagentsai.com/"
+      live: "https://www.marketagentsai.com/",
     },
-    { 
+    {
       id: 2,
-      title: "Routine Viewer App", 
-      description: "A React-based routine/schedule viewer application built with Vite and TailwindCSS.",
+      title: "Routine Viewer App",
+      description:
+        "A React-based routine/schedule viewer application built with Vite and TailwindCSS.",
       tech: ["React", "Tailwind"],
       github: "https://github.com/duwadikaustuv/routine-viewer-app",
-      live: "https://routine-viewer-app.vercel.app/"
+      live: "https://routine-viewer-app.vercel.app/",
     },
   ];
 
@@ -112,10 +121,10 @@ const Home = () => {
           className="text-center"
         >
           <h1 className="text-5xl font-heading font-bold text-deep-blue dark:text-light-blue mb-6 leading-tight">
-            Building Scalable, Modern Web Apps
+            Aspiring Full-Stack Developer
             <br />
             <span className="bg-gradient-to-r from-light-blue to-deep-blue bg-clip-text text-transparent">
-              with React & Tailwind CSS
+              React.js · ASP.NET Core
             </span>
           </h1>
           <p className="text-xl text-dark-gray dark:text-gray-300 mb-8 max-w-2xl mx-auto h-16">
@@ -129,21 +138,21 @@ const Home = () => {
               whileTap={{ scale: 0.95 }}
               className="glassmorphism px-8 py-3 rounded-lg text-light-blue dark:text-white hover:bg-light-blue/10 transition-all"
             >
-              View My Work
+              View Projects
             </motion.a>
             <motion.a
-              href="#contact"
+              href="#about"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="glassmorphism px-8 py-3 rounded-lg text-deep-blue dark:text-white border border-light-blue/20 hover:bg-light-blue/10 transition-all"
             >
-              Hire Me
+              Explore My Journey
             </motion.a>
           </div>
         </motion.div>
       </section>
 
-      {/* What I Do Section */}
+      {/* What I’m Learning & Practicing Section */}
       <section className="container mx-auto px-4 py-20" id="services">
         <motion.div
           initial={{ opacity: 0 }}
@@ -152,11 +161,13 @@ const Home = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
-            What I Do
+            What I’m Learning & Practicing
           </h2>
           <p className="text-dark-gray dark:text-gray-300 max-w-2xl mx-auto">
-            I specialize in building modern, responsive web applications using
-            the latest technologies and best practices.
+            Aspiring full-stack developer with a focus on clean, responsive UIs
+            using React.js and Tailwind CSS. Currently building backend skills
+            in C#, ASP.NET Core, and SQL Server, with a strong interest in
+            structured, maintainable code and system design.
           </p>
         </motion.div>
 
@@ -178,8 +189,7 @@ const Home = () => {
                     {service.title}
                   </h3>
                   <p className="text-dark-gray dark:text-gray-300">
-                    Delivering high-quality, responsive solutions with clean and
-                    maintainable code.
+                    {service.content}
                   </p>
                 </div>
               </GlassCard>
@@ -197,7 +207,7 @@ const Home = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
-            Recent Work
+            Recent Projects
           </h2>
           <p className="text-dark-gray dark:text-gray-300 max-w-2xl mx-auto">
             Here are some of my recent projects. Check out my projects page for
@@ -240,7 +250,7 @@ const Home = () => {
                       className="flex items-center gap-1 text-dark-gray dark:text-gray-300 hover:text-light-blue dark:hover:text-light-blue transition-colors"
                     >
                       <FiGithub />
-                      <span>Code</span>
+                      <span>Github Repo</span>
                     </a>
                     <a
                       href={project.live}
@@ -248,7 +258,7 @@ const Home = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-1 text-light-blue hover:text-deep-blue dark:hover:text-blue-300 transition-colors"
                     >
-                      <span>Live Demo</span>
+                      <span>Project Details</span>
                       <FiExternalLink />
                     </a>
                   </div>
@@ -285,12 +295,12 @@ const Home = () => {
 
               <div className="relative z-10">
                 <h2 className="text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-6">
-                  Ready to Start Your Project?
+                  Let’s Connect
                 </h2>
                 <p className="text-dark-gray dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  I'm currently available for freelance work. If you have a
-                  project that needs some creative touch, I'd love to hear about
-                  it.
+                  Whether you're working on something interesting or just want
+                  to talk code, feel free to reach out. I'm always open to
+                  learning and collaboration.
                 </p>
                 <motion.a
                   href="/contact"
@@ -298,7 +308,7 @@ const Home = () => {
                   whileTap={{ scale: 0.95 }}
                   className="inline-block px-8 py-3 bg-light-blue text-white rounded-lg hover:bg-blue-600 transition-colors"
                 >
-                  Let's Talk
+                  Reach Out
                 </motion.a>
               </div>
             </div>

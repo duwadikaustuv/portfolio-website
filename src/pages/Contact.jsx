@@ -29,13 +29,12 @@ const Contact = () => {
   } = useForm();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', or null
+  const [submitStatus, setSubmitStatus] = useState(null);
 
-  // Social media links - replace with your actual profiles
   const socialLinks = [
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/kaustuvduwadi", // You can update this if needed
+      url: "https://linkedin.com/in/kaustuvduwadi",
       icon: <FiLinkedin size={20} />,
       ariaLabel: "Visit my LinkedIn profile",
     },
@@ -58,21 +57,18 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      // Get EmailJS credentials from environment variables
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Check if we have valid credentials
       if (!serviceId || !templateId || !publicKey) {
         console.warn(
           "EmailJS credentials not properly configured. Using mock success for demo purposes."
         );
-        // Simulate API delay
+
         await new Promise((resolve) => setTimeout(resolve, 1500));
         setSubmitStatus("success");
       } else {
-        // Send the actual email
         const result = await emailjs.send(
           serviceId,
           templateId,
@@ -120,7 +116,7 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="section-title text-center mb-16">Get In Touch</h2>
+          <h2 className="section-title text-center mb-16">Let's Connect</h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
             {/* Contact Info */}
@@ -130,8 +126,8 @@ const Contact = () => {
                   Let's Connect
                 </h3>
                 <p className="text-dark-gray dark:text-gray-300 mb-8 leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or
-                  opportunities to be part of your vision.
+                  Open to internships, team projects, tech chats, or anything
+                  that helps me grow as a developer.
                 </p>
 
                 <div className="space-y-6 mb-8">
@@ -140,7 +136,7 @@ const Contact = () => {
                       <FiMail size={20} />
                     </div>
                     <div>
-                      <h4 className="font-medium text-deep-blue dark:text-light-blue mb-1">
+                      <h4 className="font-medium text-deep-blue text-start dark:text-light-blue mb-1">
                         Email
                       </h4>
                       <a
@@ -157,11 +153,11 @@ const Contact = () => {
                       <FiMessageSquare size={20} />
                     </div>
                     <div>
-                      <h4 className="font-medium text-deep-blue dark:text-light-blue mb-1">
-                        Response Time
+                      <h4 className="font-medium text-deep-blue text-start dark:text-light-blue mb-1">
+                        Response
                       </h4>
                       <p className="text-dark-gray dark:text-gray-300">
-                        I typically respond within 24-48 hours
+                        I'll try to reply as soon as possible
                       </p>
                     </div>
                   </div>
@@ -170,7 +166,7 @@ const Contact = () => {
                 <h4 className="font-medium text-deep-blue dark:text-light-blue mb-4">
                   Find me on
                 </h4>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap justify-center gap-3">
                   {socialLinks.map((link) => (
                     <a
                       key={link.name}
@@ -269,7 +265,7 @@ const Contact = () => {
                     <div className="form-group">
                       <label
                         htmlFor="email"
-                        className="block text-deep-blue dark:text-light-blue mb-2 font-medium"
+                        className="block text-deep-blue  dark:text-light-blue mb-2 font-medium"
                       >
                         Email
                       </label>
@@ -304,62 +300,19 @@ const Contact = () => {
 
                   <div className="form-group">
                     <label
-                      htmlFor="budget"
-                      className="block text-deep-blue dark:text-light-blue mb-2 font-medium"
-                    >
-                      Budget (Optional)
-                    </label>
-                    <div className="relative">
-                      <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
-                        <FiDollarSign size={18} />
-                      </div>
-                      <select
-                        id="budget"
-                        className="w-full p-3 pl-10 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg focus:outline-none focus:border-light-blue text-dark-gray dark:text-gray-200 appearance-none"
-                        {...register("budget")}
-                      >
-                        <option value="">Select your budget range</option>
-                        <option value="< $1,000">Less than $1,000</option>
-                        <option value="$1,000 - $5,000">$1,000 - $5,000</option>
-                        <option value="$5,000 - $10,000">
-                          $5,000 - $10,000
-                        </option>
-                        <option value="> $10,000">More than $10,000</option>
-                      </select>
-                      <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                        <svg
-                          className="w-4 h-4 text-gray-400"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M19 9l-7 7-7-7"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="form-group">
-                    <label
                       htmlFor="details"
                       className="block text-deep-blue dark:text-light-blue mb-2 font-medium"
                     >
                       Message
                     </label>
                     <div className="relative">
-                      <div className="absolute left-3 top-3 text-gray-400">
+                      <div className="absolute left-3 top-4 text-gray-400">
                         <FiMessageSquare size={18} />
                       </div>
                       <textarea
                         id="details"
                         rows="5"
-                        placeholder="Tell me about your project, timeline, and any specific requirements..."
+                        placeholder="Drop a message about opportunities, questions, ideas, or just say hi..."
                         className={`w-full p-3 pl-10 bg-white/5 backdrop-blur-sm border ${
                           errors.details ? "border-red-500" : "border-white/10"
                         } rounded-lg focus:outline-none focus:border-light-blue text-dark-gray dark:text-gray-200 resize-none`}
@@ -427,29 +380,11 @@ const Contact = () => {
                   <ol className="space-y-3">
                     <li className="flex items-start gap-3">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-light-blue/10 flex items-center justify-center text-light-blue">
-                        1
+                        <FiCheckCircle size={20} />
                       </div>
                       <p className="text-dark-gray dark:text-gray-300 text-sm">
-                        I'll review your message and get back to you within
-                        24-48 hours
-                      </p>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-light-blue/10 flex items-center justify-center text-light-blue">
-                        2
-                      </div>
-                      <p className="text-dark-gray dark:text-gray-300 text-sm">
-                        We'll schedule a quick discovery call to discuss your
-                        project in detail
-                      </p>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-6 h-6 rounded-full bg-light-blue/10 flex items-center justify-center text-light-blue">
-                        3
-                      </div>
-                      <p className="text-dark-gray dark:text-gray-300 text-sm">
-                        I'll provide a proposal with timeline and pricing based
-                        on your requirements
+                        I’ll try to get back to you within 24–48 hours. Looking
+                        forward to connecting!
                       </p>
                     </li>
                   </ol>

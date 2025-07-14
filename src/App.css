@@ -14,6 +14,19 @@
   padding: 2rem;
 }
 
+body.swirl-cursor-active {
+  cursor: none;
+}
+
+a,
+button,
+input,
+textarea,
+select,
+[role="button"] {
+  cursor: pointer !important;
+}
+
 @layer components {
   .section-title {
     @apply text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-12;

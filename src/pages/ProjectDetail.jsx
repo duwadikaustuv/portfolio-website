@@ -12,19 +12,18 @@ const ProjectDetail = () => {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Updated project data with your actual projects
   const projects = [
     {
       id: "1",
       title: "MarketAgents Landing Page",
-      description: "AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics.",
-      longDescription: "MarketAgents is an AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics with a modern React-based interface for economic modeling and market research. The landing page showcases the platform's features, benefits, and use cases with a clean, responsive design.",
+      description:
+        "AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics.",
+      longDescription:
+        "MarketAgents is an AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics with a modern React-based interface for economic modeling and market research. The landing page showcases the platform's features, benefits, and use cases with a clean, responsive design.",
       tech: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
       category: "SPA",
       image: "/src/assets/projects/marketAgentsLanding.png",
-      gallery: [
-        "/src/assets/projects/marketAgentsLanding.png",
-      ],
+      gallery: ["/src/assets/projects/marketAgentsLanding.png"],
       live: "https://www.marketagentsai.com/",
       github: "https://github.com/duwadikaustuv/market-agents",
       date: "2025-02-24",
@@ -33,20 +32,20 @@ const ProjectDetail = () => {
         "Modern UI with animations",
         "Clear presentation of platform features",
         "Optimized performance",
-        "SEO-friendly structure"
-      ]
+        "SEO-friendly structure",
+      ],
     },
     {
       id: "2",
       title: "Routine Viewer App",
-      description: "A React-based routine/schedule viewer application built with Vite, utilizing modern tooling like TailwindCSS for styling.",
-      longDescription: "The Routine Viewer App is a React-based application built with Vite, utilizing modern tooling like TailwindCSS for styling and ESLint for code quality. It's designed to help users manage and view their routines in an interactive way. The app features a clean, intuitive interface that makes it easy to visualize daily, weekly, and monthly schedules.",
+      description:
+        "A React-based routine/schedule viewer application built with Vite, utilizing modern tooling like TailwindCSS for styling.",
+      longDescription:
+        "The Routine Viewer App is a React-based application built with Vite, utilizing modern tooling like TailwindCSS for styling and ESLint for code quality. It's designed to help users manage and view their routines in an interactive way. The app features a clean, intuitive interface that makes it easy to visualize daily, weekly, and monthly schedules.",
       tech: ["React", "Vite", "Tailwind CSS", "ESLint", "Responsive Design"],
       category: "Web App",
       image: "/src/assets/projects/routineViewer.png",
-      gallery: [
-        "/src/assets/projects/routineViewer.png",
-      ],
+      gallery: ["/src/assets/projects/routineViewer.png"],
       live: "https://routine-viewer-app.vercel.app/",
       github: "https://github.com/duwadikaustuv/routine-viewer-app",
       date: "2025-03-09",
@@ -55,20 +54,26 @@ const ProjectDetail = () => {
         "Daily, weekly, and monthly views",
         "Responsive design for all devices",
         "Dark/light mode toggle",
-        "Fast performance with Vite"
-      ]
+        "Fast performance with Vite",
+      ],
     },
     {
       id: "3",
       title: "MarketAgents Technical Documentation",
-      description: "Comprehensive technical documentation for the MarketAgents platform with interactive examples and API references.",
-      longDescription: "The MarketAgents Technical Documentation is a comprehensive resource for developers working with the MarketAgents platform. It includes detailed API references, integration guides, code examples, and best practices. The documentation is built with React and features a clean, searchable interface with syntax highlighting for code examples.",
-      tech: ["React", "Email.js", "Tailwind CSS", "Documentation", "API Reference"],
+      description:
+        "Comprehensive technical documentation for the MarketAgents platform with interactive examples and API references.",
+      longDescription:
+        "The MarketAgents Technical Documentation is a comprehensive resource for developers working with the MarketAgents platform. It includes detailed API references, integration guides, code examples, and best practices. The documentation is built with React and features a clean, searchable interface with syntax highlighting for code examples.",
+      tech: [
+        "React",
+        "Email.js",
+        "Tailwind CSS",
+        "Documentation",
+        "API Reference",
+      ],
       category: "Documentation",
       image: "/src/assets/projects/marketAgentsDocs.png",
-      gallery: [
-        "/src/assets/projects/marketAgentsDocs.png",
-      ],
+      gallery: ["/src/assets/projects/marketAgentsDocs.png"],
       live: "https://docs.marketagentsai.com/",
       github: "https://github.com/duwadikaustuv/market-agents-docs",
       date: "2025-01-15",
@@ -78,24 +83,22 @@ const ProjectDetail = () => {
         "Searchable interface",
         "Syntax highlighting",
         "Responsive design",
-        "Dark/light mode toggle"
-      ]
-    }
+        "Dark/light mode toggle",
+      ],
+    },
   ];
 
   useEffect(() => {
-    // Find the project by ID
-    const foundProject = projects.find(p => p.id === id);
-    
+    const foundProject = projects.find((p) => p.id === id);
+
     if (foundProject) {
       setProject(foundProject);
     } else {
-      // If project not found, redirect to projects page after a short delay
       setTimeout(() => {
-        navigate('/projects');
+        navigate("/projects");
       }, 1500);
     }
-    
+
     setLoading(false);
   }, [id, navigate]);
 
@@ -139,7 +142,7 @@ const ProjectDetail = () => {
         <title>{project.title} | Kaustuv Duwadi</title>
         <meta name="description" content={project.description} />
       </Helmet>
-      
+
       <div className="container mx-auto">
         <div className="mb-8">
           <Link
@@ -161,7 +164,7 @@ const ProjectDetail = () => {
               <h1 className="text-3xl md:text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
                 {project.title}
               </h1>
-              
+
               <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.map((tech) => (
                   <span
@@ -172,7 +175,7 @@ const ProjectDetail = () => {
                   </span>
                 ))}
               </div>
-              
+
               <div className="mb-8">
                 <div className="aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden mb-4">
                   <img
@@ -180,21 +183,26 @@ const ProjectDetail = () => {
                     alt={project.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/1200x675?text=Project+Image';
+                      e.target.src =
+                        "https://via.placeholder.com/1200x675?text=Project+Image";
                     }}
                   />
                 </div>
-                
+
                 {project.gallery && project.gallery.length > 1 && (
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
                     {project.gallery.slice(1).map((img, index) => (
-                      <div key={index} className="aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden">
+                      <div
+                        key={index}
+                        className="aspect-video bg-gray-200 dark:bg-gray-800 rounded-lg overflow-hidden"
+                      >
                         <img
                           src={img}
                           alt={`${project.title} screenshot ${index + 2}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
-                            e.target.src = 'https://via.placeholder.com/600x338?text=Screenshot';
+                            e.target.src =
+                              "https://via.placeholder.com/600x338?text=Screenshot";
                           }}
                         />
                       </div>
@@ -202,7 +210,7 @@ const ProjectDetail = () => {
                   </div>
                 )}
               </div>
-              
+
               <div className="mb-8">
                 <h2 className="text-xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
                   Project Overview
@@ -211,7 +219,7 @@ const ProjectDetail = () => {
                   {project.longDescription}
                 </p>
               </div>
-              
+
               <div className="mb-8">
                 <h2 className="text-xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
                   Key Features
@@ -222,7 +230,7 @@ const ProjectDetail = () => {
                   ))}
                 </ul>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row gap-4">
                 {project.github && (
                   <a
@@ -235,7 +243,7 @@ const ProjectDetail = () => {
                     <span>View Code</span>
                   </a>
                 )}
-                
+
                 {project.live && (
                   <a
                     href={project.live}

@@ -17,14 +17,10 @@ class ErrorBoundary extends Component {
   componentDidCatch(error, errorInfo) {
     this.setState({
       error: error,
-      errorInfo: errorInfo
+      errorInfo: errorInfo,
     });
-    
-    // Log the error to an error reporting service
+
     console.error("Error caught by ErrorBoundary:", error, errorInfo);
-    
-    // You could add an actual error reporting service here
-    // Example: errorReportingService.logError(error, errorInfo);
   }
 
   render() {
@@ -35,13 +31,17 @@ class ErrorBoundary extends Component {
             <GlassCard>
               <div className="p-8 text-center">
                 <div className="flex justify-center mb-6">
-                  <FiAlertTriangle className="text-yellow-500 w-16 h-16" aria-hidden="true" />
+                  <FiAlertTriangle
+                    className="text-yellow-500 w-16 h-16"
+                    aria-hidden="true"
+                  />
                 </div>
                 <h2 className="text-2xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
                   Something went wrong
                 </h2>
                 <p className="text-dark-gray dark:text-gray-300 mb-6">
-                  The application encountered an unexpected error. You can try refreshing the page or return to the home page.
+                  The application encountered an unexpected error. You can try
+                  refreshing the page or return to the home page.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button
