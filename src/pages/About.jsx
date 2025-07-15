@@ -67,12 +67,13 @@ const About = () => {
           >
             <div className="w-64 h-64 rounded-full glassmorphism p-1">
               <img
-                src="/images/projects/profile.jpg"
+                src="/portfolio-website/images/projects/profile.jpg"
                 alt="Kaustuv Duwadi"
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.classList.add("bg-gray-200", "dark:bg-gray-700");
+                  e.target.src =
+                    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256' viewBox='0 0 256 256'%3E%3Ccircle cx='128' cy='128' r='128' fill='%23f3f4f6'/%3E%3Ctext x='128' y='128' font-family='Arial' font-size='16' fill='%23374151' text-anchor='middle' dominant-baseline='middle'%3EProfile%3C/text%3E%3C/svg%3E";
                 }}
               />
             </div>

@@ -21,8 +21,8 @@ const ProjectDetail = () => {
         "MarketAgents is an AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics with a modern React-based interface for economic modeling and market research. The landing page showcases the platform's features, benefits, and use cases with a clean, responsive design.",
       tech: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
       category: "SPA",
-      image: "/images/projects/marketAgentsLanding.png",
-      gallery: ["/images/projects/marketAgentsLanding.png"],
+      image: "/portfolio-website/images/projects/marketAgentsLanding.png",
+      gallery: ["/portfolio-website/images/projects/marketAgentsLanding.png"],
       live: "https://www.marketagentsai.com/",
       github: "https://github.com/duwadikaustuv/market-agents",
       date: "2025-02-24",
@@ -43,8 +43,8 @@ const ProjectDetail = () => {
         "The Routine Viewer App is a React-based application built with Vite, utilizing modern tooling like TailwindCSS for styling and ESLint for code quality. It's designed to help users manage and view their routines in an interactive way. The app features a clean, intuitive interface that makes it easy to visualize daily, weekly, and monthly schedules.",
       tech: ["React", "Vite", "Tailwind CSS", "ESLint", "Responsive Design"],
       category: "Web App",
-      image: "/images/projects/routineViewer.png",
-      gallery: ["/images/projects/routineViewer.png"],
+      image: "/portfolio-website/images/projects/routineViewer.png",
+      gallery: ["/portfolio-website/images/projects/routineViewer.png"],
       live: "https://routine-viewer-app.vercel.app/",
       github: "https://github.com/duwadikaustuv/routine-viewer-app",
       date: "2025-03-09",
@@ -71,8 +71,8 @@ const ProjectDetail = () => {
         "API Reference",
       ],
       category: "Documentation",
-      image: "/images/projects/marketAgentsDocs.png",
-      gallery: ["/images/projects/marketAgentsDocs.png"],
+      image: "/portfolio-website/images/projects/marketAgentsDocs.png",
+      gallery: ["/portfolio-website/images/projects/marketAgentsDocs.png"],
       live: "https://market-agent-docs-test.vercel.app/",
       github: "https://github.com/duwadikaustuv/market-agents-docs",
       date: "2025-01-15",
@@ -177,8 +177,9 @@ const ProjectDetail = () => {
                     alt={project.title}
                     className="w-full h-full object-cover"
                     onError={(e) => {
+                      e.target.onerror = null;
                       e.target.src =
-                        "https://via.placeholder.com/1200x675?text=Project+Image";
+                        "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675'%3E%3Crect width='1200' height='675' fill='%23f3f4f6'/%3E%3Ctext x='600' y='337' font-family='Arial' font-size='24' fill='%23374151' text-anchor='middle' dominant-baseline='middle'%3EProject Image%3C/text%3E%3C/svg%3E";
                     }}
                   />
                 </div>
@@ -195,8 +196,9 @@ const ProjectDetail = () => {
                           alt={`${project.title} screenshot ${index + 2}`}
                           className="w-full h-full object-cover"
                           onError={(e) => {
+                            e.target.onerror = null;
                             e.target.src =
-                              "https://via.placeholder.com/600x338?text=Screenshot";
+                              "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='338' viewBox='0 0 600 338'%3E%3Crect width='600' height='338' fill='%23f3f4f6'/%3E%3Ctext x='300' y='169' font-family='Arial' font-size='16' fill='%23374151' text-anchor='middle' dominant-baseline='middle'%3EScreenshot%3C/text%3E%3C/svg%3E";
                           }}
                         />
                       </div>
