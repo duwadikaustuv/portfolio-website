@@ -29,7 +29,7 @@ const Projects = () => {
         "AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics with a modern React-based interface for economic modeling and market research.",
       tech: ["React", "Tailwind"],
       category: "SPA",
-      image: "/src/assets/projects/marketAgentsLanding.png",
+      image: "/images/projects/marketAgentsLanding.png",
       live: "https://www.marketagentsai.com/",
       github: "https://github.com/duwadikaustuv/market-agents",
       date: "2025-02-24",
@@ -41,7 +41,7 @@ const Projects = () => {
         "A React-based routine/schedule viewer application built with Vite, utilizing modern tooling like TailwindCSS for styling and ESLint for code quality, designed to help users manage and view their routines in an interactive way.",
       tech: ["React", "Tailwind"],
       category: "Web App",
-      image: "/src/assets/projects/routineViewer.png",
+      image: "/images/projects/routineViewer.png",
       live: "https://routine-viewer-app.vercel.app/",
       github: "https://github.com/duwadikaustuv/routine-viewer-app",
       date: "2025-03-09",
@@ -53,7 +53,7 @@ const Projects = () => {
         "Analytics platform with data visualization for social media metrics. Includes customizable widgets and automated reporting.",
       tech: ["React", "Email.js", "Tailwind"],
       category: "Dashboard",
-      image: "/src/assets/projects/marketAgentsDocs.png",
+      image: "/images/projects/marketAgentsDocs.png",
       live: "https://market-agent-docs-test.vercel.app/overview",
       github: "https://github.com/duwadikaustuv/marketAgent-docs-test",
       date: "2025-03-20",
@@ -154,17 +154,17 @@ const Projects = () => {
             My Recent Work
           </h2>
 
-          {/* Search and Filter Controls */}
+                    {/* Search and Filter Controls */}
           <div className="mb-10 grid md:grid-cols-3 gap-4">
             {/* Search */}
             <div className="relative">
-              <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
+              <FiSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 z-10" />
               <input
                 type="text"
                 placeholder="Search projects..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 p-3 rounded-lg glassmorphism-input dark:bg-gray-800/50 dark:border-gray-700 dark:text-white"
+                className="w-full pl-10 p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 dark:bg-gray-800/50 dark:border-gray-700 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-light-blue/50 transition-all"
               />
             </div>
 
@@ -173,7 +173,7 @@ const Projects = () => {
               <select
                 value={selectedTech}
                 onChange={(e) => setSelectedTech(e.target.value)}
-                className="w-full p-3 rounded-lg glassmorphism-input dark:bg-gray-800/50 dark:border-gray-700 dark:text-white"
+                className="w-full p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 dark:bg-gray-800/50 dark:border-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-light-blue/50 transition-all"
               >
                 <option value="all">All Technologies</option>
                 {technologies
@@ -191,7 +191,7 @@ const Projects = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="w-full p-3 rounded-lg glassmorphism-input dark:bg-gray-800/50 dark:border-gray-700 dark:text-white"
+                className="w-full p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 dark:bg-gray-800/50 dark:border-gray-700 dark:text-white focus:outline-none focus:ring-2 focus:ring-light-blue/50 transition-all"
               >
                 <option value="newest">Newest First</option>
                 <option value="oldest">Oldest First</option>

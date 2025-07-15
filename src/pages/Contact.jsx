@@ -18,7 +18,6 @@ import {
 import GlassCard from "../components/GlassCard";
 import ThemeToggle from "../components/ThemeToggle";
 import emailjs from "@emailjs/browser";
-import SEO from "../components/SEO";
 
 const Contact = () => {
   const {
@@ -95,12 +94,6 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-soft-white dark:bg-gray-900">
-      <SEO
-        title="Contact Kaustuv Duwadi | Frontend Developer"
-        description="Get in touch with Kaustuv Duwadi for frontend development projects, collaborations, or inquiries."
-        keywords="contact, frontend developer, hire developer, react developer"
-      />
-
       <nav className="fixed w-full glassmorphism py-4 z-50 backdrop-blur-lg">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <span className="text-xl font-heading font-bold text-deep-blue dark:text-light-blue">

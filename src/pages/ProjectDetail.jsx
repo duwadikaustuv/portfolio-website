@@ -4,7 +4,6 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { FiArrowLeft, FiGithub, FiExternalLink } from "react-icons/fi";
 import GlassCard from "../components/GlassCard";
-import { Helmet } from "react-helmet-async";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -22,8 +21,8 @@ const ProjectDetail = () => {
         "MarketAgents is an AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics with a modern React-based interface for economic modeling and market research. The landing page showcases the platform's features, benefits, and use cases with a clean, responsive design.",
       tech: ["React", "Tailwind CSS", "Framer Motion", "Responsive Design"],
       category: "SPA",
-      image: "/src/assets/projects/marketAgentsLanding.png",
-      gallery: ["/src/assets/projects/marketAgentsLanding.png"],
+      image: "/images/projects/marketAgentsLanding.png",
+      gallery: ["/images/projects/marketAgentsLanding.png"],
       live: "https://www.marketagentsai.com/",
       github: "https://github.com/duwadikaustuv/market-agents",
       date: "2025-02-24",
@@ -44,8 +43,8 @@ const ProjectDetail = () => {
         "The Routine Viewer App is a React-based application built with Vite, utilizing modern tooling like TailwindCSS for styling and ESLint for code quality. It's designed to help users manage and view their routines in an interactive way. The app features a clean, intuitive interface that makes it easy to visualize daily, weekly, and monthly schedules.",
       tech: ["React", "Vite", "Tailwind CSS", "ESLint", "Responsive Design"],
       category: "Web App",
-      image: "/src/assets/projects/routineViewer.png",
-      gallery: ["/src/assets/projects/routineViewer.png"],
+      image: "/images/projects/routineViewer.png",
+      gallery: ["/images/projects/routineViewer.png"],
       live: "https://routine-viewer-app.vercel.app/",
       github: "https://github.com/duwadikaustuv/routine-viewer-app",
       date: "2025-03-09",
@@ -72,9 +71,9 @@ const ProjectDetail = () => {
         "API Reference",
       ],
       category: "Documentation",
-      image: "/src/assets/projects/marketAgentsDocs.png",
-      gallery: ["/src/assets/projects/marketAgentsDocs.png"],
-      live: "https://docs.marketagentsai.com/",
+      image: "/images/projects/marketAgentsDocs.png",
+      gallery: ["/images/projects/marketAgentsDocs.png"],
+      live: "https://market-agent-docs-test.vercel.app/",
       github: "https://github.com/duwadikaustuv/market-agents-docs",
       date: "2025-01-15",
       features: [
@@ -138,11 +137,6 @@ const ProjectDetail = () => {
 
   return (
     <div className="min-h-screen bg-soft-white dark:bg-gray-900 pt-20 pb-12 px-4">
-      <Helmet>
-        <title>{project.title} | Kaustuv Duwadi</title>
-        <meta name="description" content={project.description} />
-      </Helmet>
-
       <div className="container mx-auto">
         <div className="mb-8">
           <Link
@@ -224,9 +218,14 @@ const ProjectDetail = () => {
                 <h2 className="text-xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
                   Key Features
                 </h2>
-                <ul className="list-disc pl-5 text-dark-gray dark:text-gray-300 space-y-2">
+                <ul className="space-y-2 text-dark-gray dark:text-gray-300">
                   {project.features.map((feature, index) => (
-                    <li key={index}>{feature}</li>
+                    <li key={index} className="flex items-start gap-3">
+                      <span className="text-light-blue dark:text-blue-300 mt-1 text-sm">
+                        •
+                      </span>
+                      <span className="flex-1">{feature}</span>
+                    </li>
                   ))}
                 </ul>
               </div>

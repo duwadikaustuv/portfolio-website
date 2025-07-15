@@ -17,9 +17,9 @@ const Home = () => {
 
   useEffect(() => {
     const phrases = [
-      "Frontend developer specializing in React",
-      "Creating responsive and modern UIs",
-      "Building scalable web applications",
+      "Creating modern full stack web applications",
+      "Building interactive user interfaces with React",
+      "Creating robust backend systems with ASP.NET Core",
     ];
 
     let currentPhraseIndex = 0;

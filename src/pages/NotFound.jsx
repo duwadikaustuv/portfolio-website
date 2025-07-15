@@ -2,20 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import GlassCard from "../components/GlassCard";
-import { Helmet } from "react-helmet-async";
 import { FiHome, FiArrowLeft } from "react-icons/fi";
 
 const NotFound = () => {
   return (
     <div className="min-h-screen bg-soft-white dark:bg-gray-900 flex items-center justify-center p-4">
-      <Helmet>
-        <title>Page Not Found | Kaustuv Duwadi</title>
-        <meta
-          name="description"
-          content="The page you're looking for doesn't exist or has been moved."
-        />
-      </Helmet>
-
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

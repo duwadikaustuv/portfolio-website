@@ -67,7 +67,7 @@ const About = () => {
           >
             <div className="w-64 h-64 rounded-full glassmorphism p-1">
               <img
-                src="/images/profile.jpg"
+                src="/images/projects/profile.jpg"
                 alt="Kaustuv Duwadi"
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
