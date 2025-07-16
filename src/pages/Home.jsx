@@ -269,7 +269,7 @@ const Home = () => {
         </div>
         <div className="text-center mt-10">
           <motion.a
-            href="/projects"
+            href="/portfolio-website/projects"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block glassmorphism px-8 py-3 rounded-lg text-light-blue dark:text-white hover:bg-light-blue/10 transition-all"
@@ -303,7 +303,7 @@ const Home = () => {
                   learning and collaboration.
                 </p>
                 <motion.a
-                  href="/contact"
+                  href="/portfolio-website/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-block px-8 py-3 bg-light-blue text-white rounded-lg hover:bg-blue-600 transition-colors"
