@@ -19,15 +19,15 @@ const About = () => {
     { name: "Tailwind CSS", icon: <FiLayout /> },
     { name: "PostgreSQL", icon: <FiDatabase /> },
     { name: "ASP.NET Core", icon: <FiServer /> },
-    { name: "Git & GitHub", icon: <FiGitBranch /> },
+    { name: "Django Rest Framework", icon: <FiCode /> },
   ];
 
   const timeline = [
     {
       year: "2025",
-      title: "Full-Stack Developer (In Progress)",
+      title: "Web Developer",
       description:
-        "Building full-stack projects using ASP.NET Core, C#, and SQL Server. Practicing backend development, API integration, and MVC architecture.",
+        "Building web projects using Django, React or ASP.NET Core, C#, and SQL. Practicing backend development and clean frontend, API integration, and MVC architecture.",
     },
     {
       year: "2024",
@@ -86,7 +86,7 @@ const About = () => {
             <p className="text-lg text-dark-gray dark:text-gray-300 mb-6 leading-relaxed">
               I’m Kaustuv Duwadi, a Computing student focused on full-stack
               development. I build responsive UIs with React and Tailwind, and
-              I’m learning backend development with C# and ASP.NET Core to
+              backend development with Django DRF or C# and ASP.NET Core to
               create clean, functional systems end to end.
             </p>
           </div>
