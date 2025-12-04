@@ -121,10 +121,10 @@ const Home = () => {
           className="text-center"
         >
           <h1 className="text-5xl font-heading font-bold text-deep-blue dark:text-light-blue mb-6 leading-tight">
-            Aspiring Full-Stack Developer
+            Web Developer
             <br />
             <span className="bg-gradient-to-r from-light-blue to-deep-blue bg-clip-text text-transparent">
-              React.js · ASP.NET Core
+              React.js · Django . ASP.NET Core
             </span>
           </h1>
           <p className="text-xl text-dark-gray dark:text-gray-300 mb-8 max-w-2xl mx-auto h-16">
