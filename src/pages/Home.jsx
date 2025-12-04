@@ -17,9 +17,9 @@ const Home = () => {
 
   useEffect(() => {
     const phrases = [
-      "Creating modern full stack web applications",
+      "Creating modern web applications",
       "Building interactive user interfaces with React",
-      "Creating robust backend systems with ASP.NET Core",
+      "Developing modern dynamic designs with Tailwind",
     ];
 
     let currentPhraseIndex = 0;
@@ -64,14 +64,14 @@ const Home = () => {
       content: "React.js, Tailwind CSS, Vite, JavaScript (ES6+)",
     },
     {
-      title: "Backend (Learning)",
+      title: "Backend",
       icon: <FiDatabase />,
-      content: "C#, ASP.NET Core MVC, Entity Framework, PostgreSQL",
+      content: "Python, Django, C#, ASP.NET Core MVC, Entity Framework, PostgreSQL",
     },
     {
       title: "Tools",
       icon: <FiTool />,
-      content: "Git & Github, Visual Studio, Rider & VS Code, Postman",
+      content: "Git & Github, Visual Studio, VS Code, Postman",
     },
     {
       title: "Workflows",
@@ -164,9 +164,9 @@ const Home = () => {
             What I’m Learning & Practicing
           </h2>
           <p className="text-dark-gray dark:text-gray-300 max-w-2xl mx-auto">
-            Aspiring full-stack developer with a focus on clean, responsive UIs
-            using React.js and Tailwind CSS. Currently building backend skills
-            in C#, ASP.NET Core, and SQL Server, with a strong interest in
+            Web developer with a focus on clean, responsive UIs
+            using React.js and Tailwind CSS. Backend
+            in Django DRF, C#, ASP.NET Core, and SQL, with a strong focus in
             structured, maintainable code and system design.
           </p>
         </motion.div>
