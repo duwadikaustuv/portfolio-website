@@ -19,9 +19,9 @@ const Home = () => {
 
   useEffect(() => {
     const phrases = [
-      "Creating modern full stack web applications",
+      "Creating modern web applications",
       "Building interactive user interfaces with React",
-      "Creating robust backend systems with ASP.NET Core",
+      "Developing modern dynamic designs with Tailwind",
     ];
 
     let currentPhraseIndex = 0;
@@ -68,12 +68,12 @@ const Home = () => {
     {
       title: "Backend",
       icon: <FiDatabase />,
-      content: "C#, ASP.NET Core MVC, Entity Framework, PostgreSQL",
+      content: "Python, Django, C#, ASP.NET Core MVC, Entity Framework, PostgreSQL",
     },
     {
       title: "Tools",
       icon: <FiTool />,
-      content: "Git & Github, Visual Studio, Rider & VS Code, Postman",
+      content: "Git & Github, Visual Studio, VS Code, Postman",
     },
     {
       title: "Workflows",

@@ -21,13 +21,13 @@ const Services = () => {
     {
       title: "Backend & API Work",
       description:
-        "Work with RESTful APIs and backend logic using ASP.NET Core",
-      features: ["C# Controllers", "SQL Integration"],
+        "Work with RESTful APIs and backend logic using Django DRF or ASP.NET Core",
+      features: ["Django MVC", "C# Controllers", "SQL Integration"],
     },
     {
       title: "Full-Stack Projects",
       description: "End-to-end project structure from UI to database",
-      features: ["ASP.NET Core + React", "CRUD Operations"],
+      features: ["Django DRF + React or ASP.NET Core", "CRUD Operations"],
     },
   ];
 
@@ -141,8 +141,8 @@ const Services = () => {
                 Let’s Connect
               </h3>
               <p className="text-dark-gray dark:text-gray-400 mb-6">
-                Open to internships, collaborations, and conversations around
-                web development, .NET, or anything tech. Feel free to reach out.
+                Open to placements, collaborations, and conversations around
+                AI/ML, web development, Django DRF, .NET, or anything tech. Feel free to reach out.
               </p>
               <motion.button
                 whileHover={{ scale: 1.05 }}
