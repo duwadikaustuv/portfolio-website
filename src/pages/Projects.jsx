@@ -23,65 +23,147 @@ const Projects = () => {
 
   const projects = [
     {
-      id: 1,
-      title: "MarketAgents Landing Page",
+      id: "1",
+      title: "Flood Risk Assessment API - Nepal DHM, GLOFAS, and Elevation Data",
       description:
-        "AI-powered market simulation platform featuring multi-agent systems, prediction markets, and real-time analytics with a modern React-based interface for economic modeling and market research.",
-      tech: ["React", "Tailwind"],
-      category: "SPA",
-      image: "/portfolio-website/images/projects/marketAgentsLanding.png",
-      live: "https://www.marketagentsai.com/",
-      github: "https://github.com/duwadikaustuv/market-agents",
+        "Built a disaster preparedness API for Nepal that assesses flood risk for properties using Nepal DHM, GLOFAS, Open-Elevation, and OpenStreetMap data, integrated with AI image generation.",
+      tech: ["ASP.NET Core", "TypeScript", "DHM Nepal API", "GLOFAS", "Open-Elevation API", "OpenStreetMap", "Replicate (Stable Diffusion)", "AI image generation"],
+      category: "Backend & API",
+      image: "images/projects/Flood Risk Assessment API - Nepal DHM, GLOFAS, and Elevation Data.png",
+      live: "",
+      github: "",
+      date: "2025-05-15",
+    },
+    {
+      id: "2",
+      title: "HimalayaAI Landing Website",
+      description:
+        "Designed, developed, and deployed a responsive landing page for a Nepali Sovereign AI company, HimalayaAI, with reusable components and clean source control.",
+      tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js"],
+      category: "Frontend",
+      image: "images/projects/HimalayaAI Landing Website.png",
+      live: "https://himalayaai.org/",
+      github: "",
+      date: "2025-04-10",
+    },
+    {
+      id: "3",
+      title: "AvatamLabs Landing Website",
+      description:
+        "Designed, developed, and deployed a responsive landing page for a forward deployment AI Agentic company using Next.js and Tailwind CSS.",
+      tech: ["Next.js", "Tailwind CSS", "TypeScript", "Responsive Design"],
+      category: "Frontend",
+      image: "images/projects/AvatamLabs Landing Website.png",
+      live: "https://www.avatam.ai/",
+      github: "",
+      date: "2025-03-30",
+    },
+    {
+      id: "4",
+      title: "MarketAgents Landing Website",
+      description:
+        "Designed, developed, and deployed a responsive landing page for MarketAgents, a US-based AI company, with reusable components and clean source control.",
+      tech: ["React.js", "Tailwind CSS", "Vite", "Responsive Design"],
+      category: "Frontend",
+      image: "images/projects/marketAgentsLandingWebsite.png",
+      live: "https://marketagentsai.com/",
+      github: "",
       date: "2025-02-24",
     },
     {
-      id: 2,
-      title: "Routine Viewer App",
+      id: "5",
+      title: "Pumori Coffee Landing Website",
       description:
-        "A React-based routine/schedule viewer application built with Vite, utilizing modern tooling like TailwindCSS for styling and ESLint for code quality, designed to help users manage and view their routines in an interactive way.",
-      tech: ["React", "Tailwind"],
-      category: "Web App",
-      image: "/portfolio-website/images/projects/routineViewer.png",
-      live: "https://routine-viewer-app.vercel.app/",
-      github: "https://github.com/duwadikaustuv/routine-viewer-app",
-      date: "2025-03-09",
+        "Designed and developed a fast, SEO-optimized landing page for a coffee brand using Next.js, semantic HTML, and Tailwind CSS.",
+      tech: ["Next.js", "Tailwind CSS", "Semantic HTML", "SEO Optimization", "Performance Tuning"],
+      category: "Frontend",
+      image: "images/projects/Pumori Coffee Landing Website.png",
+      live: "https://pumoricoffee.com/",
+      github: "",
+      date: "2025-02-10",
     },
     {
-      id: 3,
-      title: "MarketAgents Technical Documentation",
+      id: "6",
+      title: "Full-Stack Blog Platform with Next.js & Prisma",
       description:
-        "Analytics platform with data visualization for social media metrics. Includes customizable widgets and automated reporting.",
-      tech: ["React", "Email.js", "Tailwind"],
-      category: "Dashboard",
-      image: "/portfolio-website/images/projects/marketAgentsDocs.png",
-      live: "https://market-agent-docs-test.vercel.app/overview",
-      github: "https://github.com/duwadikaustuv/marketAgent-docs-test",
-      date: "2025-03-20",
+        "Built a production-ready blogging platform using Next.js, TypeScript, Prisma ORM, and Turso (LibSQL) with modern full-stack architecture.",
+      tech: ["Next.js", "TypeScript", "Prisma ORM", "Turso (LibSQL)", "Database Design"],
+      category: "Full Stack",
+      image: "images/projects/Full-Stack Blog Platform with Next.js & Prisma.png",
+      live: "https://github.com/duwadikaustuv/blog-website",
+      github: "https://github.com/duwadikaustuv/blog-website",
+      date: "2025-01-20",
+    },
+    {
+      id: "7",
+      title: "GitHub Repository Health API with PDF Reports and MinIO Storage",
+      description:
+        "Built a GitHub repository health dashboard API that analyzes public repos, returns metrics, health scores, and downloadable PDF reports.",
+      tech: ["ASP.NET Core", "Redis", "Polly", "Hangfire", "MinIO", "GitHub REST API", "Snyk API"],
+      category: "Backend & API",
+      image: "images/projects/GitHub Repository Health API with PDF Reports and MinIO Storage.png",
+      live: "https://github.com/duwadikaustuv/RepoRadar",
+      github: "https://github.com/duwadikaustuv/RepoRadar",
+      date: "2024-12-15",
+    },
+    {
+      id: "8",
+      title: "Weather Aggregation API with Redis Caching",
+      description:
+        "Built a unified weather intelligence API that aggregates weather, air pollution, and UV Index data into an Outdoor Score with parallel fetching and Redis caching.",
+      tech: [".NET 10", "ASP.NET Core", "Redis", "Polly", "Hangfire", "PostgreSQL", "Next.js", "TypeScript", "Tailwind CSS"],
+      category: "Backend & API",
+      image: "images/projects/Weather Aggregation API with Redis Caching.png",
+      live: "https://github.com/duwadikaustuv/WeatherPulse",
+      github: "https://github.com/duwadikaustuv/WeatherPulse",
+      date: "2024-11-20",
+    },
+    {
+      id: "9",
+      title: "Farmland Suitability API - NASA, and Weather Data Integration",
+      description:
+        "Built a crop suitability API integrating NASA POWER, weather, elevation, and Nepal agricultural datasets with Redis caching and Hangfire PDF generation.",
+      tech: ["ASP.NET Core", "NASA POWER API", "OpenWeatherMap API", "Redis", "Polly", "Hangfire", "Clean Architecture"],
+      category: "Backend & API",
+      image: "images/projects/Farmland Suitability API - NASA, and Weather Data Integration.png",
+      live: "https://github.com/duwadikaustuv/AgriIntel",
+      github: "https://github.com/duwadikaustuv/AgriIntel",
+      date: "2024-10-10",
+    },
+    {
+      id: "10",
+      title: "Solar Feasibility - NASA POWER, Open-Elevation, and Nepal Land Data",
+      description:
+        "Built a solar feasibility API for Nepal determining optimal solar panel placement using NASA POWER, Open-Elevation, and Nepal Land Data, with AI visual simulation.",
+      tech: ["ASP.NET Core", "NASA POWER API", "Open-Elevation API", "Open Data Nepal", "OpenStreetMap Nominatim", "Replicate API", "AI image generation"],
+      category: "Backend & API",
+      image: "images/projects/Solar Feasibility - NASA POWER, Open-Elevation, and Nepal Land Data.png",
+      live: "",
+      github: "",
+      date: "2024-09-15",
     },
   ];
 
   const technologies = [
     "all",
-    "React",
+    "React.js",
     "Next.js",
-    "Node.js",
     "TypeScript",
-    "Firebase",
-    "MongoDB",
-    "Express",
-    "Chart.js",
-    "AWS",
-    "Redux",
-    "Tailwind",
+    "ASP.NET Core",
+    "Tailwind CSS",
+    "Node.js",
+    "Express.js",
+    "Redis",
+    "Prisma ORM",
+    "Hangfire",
+    "MinIO",
   ];
 
   const categories = [
     "all",
+    "Frontend",
+    "Backend & API",
     "Full Stack",
-    "Web App",
-    "Dashboard",
-    "SAAS",
-    "Mobile",
   ];
 
   useEffect(() => {
@@ -221,7 +303,7 @@ const Projects = () => {
                   <GlassCard>
                     <div className="overflow-hidden rounded-t-xl h-48">
                       <img
-                        src={project.image}
+                        src={`${import.meta.env.BASE_URL}${project.image}`}
                         alt={project.title}
                         className="w-full h-full object-cover transition-transform hover:scale-110 duration-500"
                         onError={(e) => {
@@ -253,17 +335,33 @@ const Projects = () => {
                           </span>
                         ))}
                       </div>
-                      <div className="flex justify-between">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 text-dark-gray dark:text-gray-300 hover:text-light-blue dark:hover:text-light-blue transition-colors"
-                          aria-label={`View source code for ${project.title}`}
-                        >
-                          <FiGithub />
-                          <span>Code</span>
-                        </a>
+                      <div className="flex justify-between items-center mt-4">
+                        <div className="flex gap-4">
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-dark-gray dark:text-gray-300 hover:text-light-blue dark:hover:text-light-blue transition-colors"
+                              aria-label={`View source code for ${project.title}`}
+                            >
+                              <FiGithub />
+                              <span>Code</span>
+                            </a>
+                          )}
+                          {project.live && (
+                            <a
+                              href={project.live}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-1 text-light-blue hover:text-deep-blue dark:hover:text-blue-300 transition-colors"
+                              aria-label={`View live site for ${project.title}`}
+                            >
+                              <FiExternalLink />
+                              <span>Live</span>
+                            </a>
+                          )}
+                        </div>
                         <Link
                           to={`/projects/${project.id}`}
                           className="flex items-center gap-1 text-light-blue hover:text-deep-blue dark:hover:text-blue-300 transition-colors"

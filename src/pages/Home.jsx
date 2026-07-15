@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   FiGithub,
   FiExternalLink,
@@ -8,6 +9,7 @@ import {
   FiCode,
   FiDatabase,
   FiRepeat,
+  FiEye,
 } from "react-icons/fi";
 import GlassCard from "../components/GlassCard";
 import ThemeToggle from "../components/ThemeToggle";
@@ -64,7 +66,7 @@ const Home = () => {
       content: "React.js, Tailwind CSS, Vite, JavaScript (ES6+)",
     },
     {
-      title: "Backend (Learning)",
+      title: "Backend",
       icon: <FiDatabase />,
       content: "C#, ASP.NET Core MVC, Entity Framework, PostgreSQL",
     },
@@ -82,22 +84,31 @@ const Home = () => {
 
   const projects = [
     {
-      id: 1,
-      title: "MarketAgents Landing Page",
+      id: "1",
+      title: "Flood Risk Assessment API - Nepal DHM, GLOFAS, and Elevation Data",
       description:
-        "AI-powered market simulation platform featuring multi-agent systems and real-time analytics.",
-      tech: ["React", "Tailwind"],
-      github: "https://github.com/duwadikaustuv/market-agents",
-      live: "https://www.marketagentsai.com/",
+        "Built a disaster preparedness API for Nepal that assesses flood risk for properties using Nepal DHM, GLOFAS, Open-Elevation, and OpenStreetMap data, integrated with AI image generation.",
+      tech: ["ASP.NET Core", "TypeScript", "DHM Nepal API", "Replicate"],
+      github: "",
+      live: "",
     },
     {
-      id: 2,
-      title: "Routine Viewer App",
+      id: "2",
+      title: "HimalayaAI Landing Website",
       description:
-        "A React-based routine/schedule viewer application built with Vite and TailwindCSS.",
-      tech: ["React", "Tailwind"],
-      github: "https://github.com/duwadikaustuv/routine-viewer-app",
-      live: "https://routine-viewer-app.vercel.app/",
+        "Designed, developed, and deployed a responsive landing page for a Nepali Sovereign AI company, HimalayaAI, with reusable components and clean source control.",
+      tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js"],
+      github: "",
+      live: "https://himalayaai.org/",
+    },
+    {
+      id: "7",
+      title: "GitHub Repository Health API with PDF Reports and MinIO Storage",
+      description:
+        "Built a GitHub repository health dashboard API that analyzes public repos, returns metrics, health scores, and downloadable PDF reports.",
+      tech: ["ASP.NET Core", "Redis", "Polly", "Hangfire", "MinIO"],
+      github: "https://github.com/duwadikaustuv/RepoRadar",
+      live: "https://github.com/duwadikaustuv/RepoRadar",
     },
   ];
 
@@ -121,10 +132,10 @@ const Home = () => {
           className="text-center"
         >
           <h1 className="text-5xl font-heading font-bold text-deep-blue dark:text-light-blue mb-6 leading-tight">
-            Aspiring Full-Stack Developer
+            Full-Stack Engineer
             <br />
             <span className="bg-gradient-to-r from-light-blue to-deep-blue bg-clip-text text-transparent">
-              React.js · ASP.NET Core
+              React.js · Next.js · ASP.NET Core
             </span>
           </h1>
           <p className="text-xl text-dark-gray dark:text-gray-300 mb-8 max-w-2xl mx-auto h-16">
@@ -150,52 +161,6 @@ const Home = () => {
             </motion.a>
           </div>
         </motion.div>
-      </section>
-
-      {/* What I’m Learning & Practicing Section */}
-      <section className="container mx-auto px-4 py-20" id="services">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
-            What I’m Learning & Practicing
-          </h2>
-          <p className="text-dark-gray dark:text-gray-300 max-w-2xl mx-auto">
-            Aspiring full-stack developer with a focus on clean, responsive UIs
-            using React.js and Tailwind CSS. Currently building backend skills
-            in C#, ASP.NET Core, and SQL Server, with a strong interest in
-            structured, maintainable code and system design.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <GlassCard>
-                <div className="p-6 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-3xl text-light-blue bg-light-blue/10 rounded-full">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-heading font-bold text-deep-blue dark:text-light-blue mb-2">
-                    {service.title}
-                  </h3>
-                  <p className="text-dark-gray dark:text-gray-300">
-                    {service.content}
-                  </p>
-                </div>
-              </GlassCard>
-            </motion.div>
-          ))}
-        </div>
       </section>
 
       {/* Recent Work Section */}
@@ -242,25 +207,38 @@ const Home = () => {
                   <p className="text-dark-gray dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
-                  <div className="flex justify-between">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-dark-gray dark:text-gray-300 hover:text-light-blue dark:hover:text-light-blue transition-colors"
-                    >
-                      <FiGithub />
-                      <span>Github Repo</span>
-                    </a>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                   <div className="flex justify-between items-center mt-4">
+                    <div className="flex gap-4">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-dark-gray dark:text-gray-300 hover:text-light-blue dark:hover:text-light-blue transition-colors"
+                        >
+                          <FiGithub />
+                          <span>Code</span>
+                        </a>
+                      )}
+                      {project.live && (
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 text-light-blue hover:text-deep-blue dark:hover:text-blue-300 transition-colors"
+                        >
+                          <FiExternalLink />
+                          <span>Live</span>
+                        </a>
+                      )}
+                    </div>
+                    <Link
+                      to={`/projects/${project.id}`}
                       className="flex items-center gap-1 text-light-blue hover:text-deep-blue dark:hover:text-blue-300 transition-colors"
                     >
-                      <span>Project Details</span>
-                      <FiExternalLink />
-                    </a>
+                      <span>Details</span>
+                      <FiEye />
+                    </Link>
                   </div>
                 </div>
               </GlassCard>
@@ -268,14 +246,18 @@ const Home = () => {
           ))}
         </div>
         <div className="text-center mt-10">
-          <motion.a
-            href="/portfolio-website/projects"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block glassmorphism px-8 py-3 rounded-lg text-light-blue dark:text-white hover:bg-light-blue/10 transition-all"
+          <Link
+            to="/projects"
+            className="inline-block"
           >
-            View All Projects
-          </motion.a>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="glassmorphism px-8 py-3 rounded-lg text-light-blue dark:text-white hover:bg-light-blue/10 transition-all"
+            >
+              View All Projects
+            </motion.div>
+          </Link>
         </div>
       </section>
 
@@ -302,14 +284,18 @@ const Home = () => {
                   to talk code, feel free to reach out. I'm always open to
                   learning and collaboration.
                 </p>
-                <motion.a
-                  href="/portfolio-website/contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-block px-8 py-3 bg-light-blue text-white rounded-lg hover:bg-blue-600 transition-colors"
+                <Link
+                  to="/contact"
+                  className="inline-block"
                 >
-                  Reach Out
-                </motion.a>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-3 bg-light-blue text-white rounded-lg hover:bg-blue-600 transition-colors"
+                  >
+                    Reach Out
+                  </motion.div>
+                </Link>
               </div>
             </div>
           </GlassCard>

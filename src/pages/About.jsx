@@ -9,6 +9,8 @@ import {
   FiServer,
   FiGitBranch,
   FiTerminal,
+  FiGlobe,
+  FiCpu,
 } from "react-icons/fi";
 import GlassCard from "../components/GlassCard";
 import ThemeToggle from "../components/ThemeToggle";
@@ -16,30 +18,33 @@ import ThemeToggle from "../components/ThemeToggle";
 const About = () => {
   const skills = [
     { name: "React.js", icon: <FiCode /> },
+    { name: "Next.js", icon: <FiGlobe /> },
+    { name: "TypeScript", icon: <FiTerminal /> },
+    { name: "ASP.NET Core", icon: <FiServer /> },
     { name: "Tailwind CSS", icon: <FiLayout /> },
     { name: "PostgreSQL", icon: <FiDatabase /> },
-    { name: "ASP.NET Core", icon: <FiServer /> },
     { name: "Git & GitHub", icon: <FiGitBranch /> },
+    { name: "AI & Image Gen", icon: <FiCpu /> },
   ];
 
   const timeline = [
     {
-      year: "2025",
-      title: "Full-Stack Developer (In Progress)",
+      year: "2025 - Present",
+      title: "Freelance Full-Stack Engineer",
       description:
-        "Building full-stack projects using ASP.NET Core, C#, and SQL Server. Practicing backend development, API integration, and MVC architecture.",
+        "Building and deploying production web applications. Specializing in integrating third-party APIs (geospatial, weather, agricultural) and AI image generation workflows using React/Next.js, C#, .NET, SQL, and Redis.",
     },
     {
-      year: "2024",
-      title: "Frontend Developer (Internship)",
+      year: "2024 - 2025",
+      title: "Web Developer (Intern)",
       description:
-        "Worked with a team at SMaRC to build and maintain React apps. Integrated APIs, participated in code reviews, and contributed to production-ready features.",
+        "Developed 10+ full-stack web applications at ING Skill Academy using React.js, Next.js, TypeScript, Redux, and ASP.NET Core. Integrated 20+ external APIs and reduced implementation time by ~30%.",
     },
     {
       year: "2024",
       title: "Web Dev Beginner",
       description:
-        "Started learning HTML, CSS, JavaScript, and React. Built small UI projects and began exploring Tailwind CSS.",
+        "Started learning HTML, CSS, JavaScript, and React. Built UI projects and explored Tailwind CSS, establishing a solid frontend foundation.",
     },
   ];
 
@@ -67,7 +72,7 @@ const About = () => {
           >
             <div className="w-64 h-64 rounded-full glassmorphism p-1">
               <img
-                src="/portfolio-website/images/projects/profile.jpg"
+                src={`${import.meta.env.BASE_URL}images/profile.jpg`}
                 alt="Kaustuv Duwadi"
                 className="w-full h-full object-cover rounded-full"
                 onError={(e) => {
@@ -84,10 +89,7 @@ const About = () => {
               About Me
             </h2>
             <p className="text-lg text-dark-gray dark:text-gray-300 mb-6 leading-relaxed">
-              I’m Kaustuv Duwadi, a Computing student focused on full-stack
-              development. I build responsive UIs with React and Tailwind, and
-              I’m learning backend development with C# and ASP.NET Core to
-              create clean, functional systems end to end.
+              I’m Kaustuv Duwadi, a Full-Stack Software Developer and Computing student. I have hands-on experience integrating complex third-party APIs (geospatial, weather, agricultural) and AI image generation workflows into production web applications. I specialize in building robust solutions using React/Next.js, TypeScript, .NET, SQL, Redis, and background jobs.
             </p>
           </div>
         </motion.div>
