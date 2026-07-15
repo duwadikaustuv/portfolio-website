@@ -119,8 +119,7 @@ const Contact = () => {
                   Let's Connect
                 </h3>
                 <p className="text-dark-gray dark:text-gray-300 mb-8 leading-relaxed">
-                  Open to internships, team projects, tech chats, or anything
-                  that helps me grow as a developer.
+                  Open to placements, contracts, or any exciting opportunities!
                 </p>
 
                 <div className="space-y-6 mb-8">

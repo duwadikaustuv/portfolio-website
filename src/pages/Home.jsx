@@ -282,7 +282,7 @@ const Home = () => {
                 <p className="text-dark-gray dark:text-gray-300 mb-8 max-w-2xl mx-auto">
                   Whether you're working on something interesting or just want
                   to talk code, feel free to reach out. I'm always open to
-                  learning and collaboration.
+                  collaboration and exciting opportunities.
                 </p>
                 <Link
                   to="/contact"

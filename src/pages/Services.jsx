@@ -124,36 +124,10 @@ const Services = () => {
               className="mt-12 text-center text-dark-gray dark:text-gray-400 max-w-2xl mx-auto"
             >
               My personal workflow for learning, building, and refining
-              full-stack projects — from idea to deployment.
+              full-stack projects; from idea to deployment.
             </motion.p>
           </div>
         </motion.section>
-
-        {/* Contact CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="text-center mt-16"
-        >
-          <GlassCard>
-            <div className="p-8">
-              <h3 className="text-2xl font-heading font-bold text-deep-blue dark:text-light-blue mb-4">
-                Let’s Connect
-              </h3>
-              <p className="text-dark-gray dark:text-gray-400 mb-6">
-                Open to placements, collaborations, and conversations around
-                AI/ML, web development, Django DRF, .NET, or anything tech. Feel free to reach out.
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glassmorphism px-8 py-3 rounded-lg text-light-blue dark:text-white hover:bg-light-blue/10 transition-all"
-              >
-                Reach Out
-              </motion.button>
-            </div>
-          </GlassCard>
-        </motion.div>
       </div>
     </div>
   );
